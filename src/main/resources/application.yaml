@@ -1,0 +1,39 @@
+server:
+    address: 0.0.0.0
+    port: 8082
+spring:
+  application:
+    name: IdentityAndAccessManagement
+  # 1. Datasource Configuration (Connection Details)
+  datasource:
+    # Use 'mem' for an in-memory database that is cleared on exit
+    url: jdbc:h2:file:./data/my_db_file
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  # 2. H2 Console Configuration (Web Interface)
+  h2:
+    console:
+      # Set to 'true' to enable the web console
+      enabled: true
+      # Optional: Set a custom path for the console access
+      path: /h2-db-console
+
+  # 3. JPA/Hibernate Configuration (Optional but recommended for development)
+  jpa:
+    hibernate:
+      # Set to 'update' to automatically create/update tables from JPA entities
+      ddl-auto: update
+    show-sql: true # Log the SQL Hibernate executes
+    
+  security:
+    user:
+      name: qwerty
+      password: qwerty
+      roles: ADMIN
+  logging:
+    level:
+       org:
+        springframework:
+            security: DEBUG
