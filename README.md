@@ -26,20 +26,6 @@ Input validation using Jakarta Validation
 
 ---
 
- ⚙️ System Design Overview
-
-Client App
-   │  clientId + secretKey
-   ▼
-IAM Service (Spring Boot)
-   ├── Client Registration
-   ├── User Signup / Login
-   ├── JWT Issuance
-   └── Token Validation API
-
-
----
-
 📁 Project Structure
 
 controllers/     → REST APIs (Auth, Client Registration)
