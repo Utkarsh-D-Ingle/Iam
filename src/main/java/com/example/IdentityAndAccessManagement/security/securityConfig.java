@@ -21,14 +21,13 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.beans.factory.annotation.Autowired;
-//import com.example.IdentityAndAccessManagement.JwtFilter;
 
 @Configuration
 @EnableWebSecurity
 public class securityConfig {
     
     @Autowired
-    private JwtFilter jwtFilter; // Add this at the top of the class
+    private JwtFilter jwtFilter;
 
 
     @Bean
