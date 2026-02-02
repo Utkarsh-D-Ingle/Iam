@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "app_users")
-public class User implements UserDetails { // 1. Add implements
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -32,13 +32,12 @@ public class User implements UserDetails { // 1. Add implements
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // Giving every user a default role. 
-        // You can later store roles in the DB if needed.
         return Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
     public String getPassword() {
-        return this.passwordhash; // Map your field to Spring's requirement
+        return this.passwordhash;
     }
 
     @Override
@@ -48,7 +47,7 @@ public class User implements UserDetails { // 1. Add implements
 
     @Override
     public boolean isAccountNonExpired() {
-        return true; // Set to true for simple use cases
+        return true;
     }
 
     @Override
@@ -65,8 +64,7 @@ public class User implements UserDetails { // 1. Add implements
     public boolean isEnabled() {
         return true;
     }
-
-    // --- Standard Getters and Setters ---
+    
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public void setUsername(String username) { this.username = username; }
