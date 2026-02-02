@@ -7,7 +7,6 @@ import java.util.Optional;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, String> {
-    // Custom query to find a user by their username
     Optional<Client> findByClientId(String clientId);
     
     Optional<Client> findByAppName(String AppName);
