@@ -1,4 +1,4 @@
-package com.example.IdentityAndAccessManagement.entities; // adjust package as needed
+package com.example.IdentityAndAccessManagement.entities;
 
 public class AuthResponse {
     private String token;
